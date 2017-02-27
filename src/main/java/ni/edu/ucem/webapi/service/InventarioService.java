@@ -1,7 +1,9 @@
 package ni.edu.ucem.webapi.service;
 
+import java.util.Date;
 import ni.edu.ucem.webapi.modelo.CategoriaCuarto;
 import ni.edu.ucem.webapi.modelo.Cuarto;
+import ni.edu.ucem.webapi.modelo.Disponible;
 import ni.edu.ucem.webapi.modelo.Reservacion;
 import ni.edu.ucem.webapi.modelo.Pagina;
 import ni.edu.ucem.webapi.modelo.Filtro;
@@ -39,6 +41,8 @@ public interface InventarioService
     public void guardarReservacion(final Reservacion pReservacion);
     
     public void eliminarReservacion(final int pId);
+    
+    public Disponible obtenerDisponible(Date desde, Date hasta);
     
     
     

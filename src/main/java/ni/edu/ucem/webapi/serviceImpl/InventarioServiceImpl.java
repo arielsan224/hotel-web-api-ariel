@@ -1,6 +1,7 @@
 package ni.edu.ucem.webapi.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -8,9 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ni.edu.ucem.webapi.dao.CategoriaCuartoDAO;
 import ni.edu.ucem.webapi.dao.CuartoDAO;
+import ni.edu.ucem.webapi.dao.DisponibleDAO;
 import ni.edu.ucem.webapi.dao.ReservacionDAO;
 import ni.edu.ucem.webapi.modelo.CategoriaCuarto;
 import ni.edu.ucem.webapi.modelo.Cuarto;
+import ni.edu.ucem.webapi.modelo.Disponible;
 import ni.edu.ucem.webapi.modelo.Pagina;
 import ni.edu.ucem.webapi.modelo.Reservacion;
 import ni.edu.ucem.webapi.modelo.Filtro;
@@ -22,13 +25,15 @@ public class InventarioServiceImpl implements InventarioService
     private final CategoriaCuartoDAO categoriaCuartoDAO;
     private final CuartoDAO cuartoDAO;
 	private final ReservacionDAO reservacionDAO;
+	private final DisponibleDAO disponibleDAO;
     
     public InventarioServiceImpl(final CategoriaCuartoDAO categoriaCuartoDAO,
-            final CuartoDAO cuartoDAO, final ReservacionDAO reservacionDAO)
+            final CuartoDAO cuartoDAO, final ReservacionDAO reservacionDAO, DisponibleDAO disponibleDAO)
     {
         this.categoriaCuartoDAO = categoriaCuartoDAO;
         this.cuartoDAO = cuartoDAO;
         this.reservacionDAO =reservacionDAO;
+        this.disponibleDAO = disponibleDAO;
     }
     @Transactional
     @Override
@@ -198,5 +203,11 @@ public class InventarioServiceImpl implements InventarioService
         }
         this.reservacionDAO.eliminar(pId);
     }
+	@Override
+	public Disponible obtenerDisponible(Date desde, Date hasta) {
+		// TODO Auto-generated method stub
+		return this.disponibleDAO.obtenerDisponible(desde, hasta);
+		
+	}
 	
 }

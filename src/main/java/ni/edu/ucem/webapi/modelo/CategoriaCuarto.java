@@ -17,7 +17,7 @@ public class CategoriaCuarto
     private Integer id;
 	
 	@NotNull
-    @NotEmpty(message = "La nombre es requerido.")
+    @NotEmpty(message = "El nombre es requerido.")
     @Pattern(regexp = "^[\\w ]+$")
     private String nombre;
 	

@@ -21,10 +21,14 @@ INSERT INTO huesped (nombre,email,telefono)
 	VALUES ('Julio Lopez', 'juliolopez@gmail.com', '22225046' );	
 	
 	
-INSERT into reservacion (desde, hasta, cuarto, huesped)	VALUES ('2017-02-24', '2017-02-25', 1, 1);
+INSERT INTO reservacion (desde, hasta, cuarto, huesped)	
+	VALUES ({ts '2017-02-24 00:00:00.0'}, {ts '2017-02-25 00:00:00.0'}, 1, 1);	
 	
-INSERT into reservacion (desde, hasta, cuarto, huesped)	VALUES ('2017-02-25', '2017-02-27', 2, 2);	
+INSERT INTO reservacion (desde, hasta, cuarto, huesped)	
+	VALUES ({ts '2017-02-25 00:00:00.0'}, {ts '2017-02-27 00:00:00.0'}, 2, 2);	
 	
-INSERT into reservacion (desde, hasta, cuarto, huesped)	VALUES ('2017-02-24', '2017-02-28', 3, 1);
+INSERT INTO reservacion (desde, hasta, cuarto, huesped)	
+	VALUES ({ts '2017-02-24 00:00:00.0'}, {ts '2017-02-28 00:00:00.0'}, 3, 1);
 	
-INSERT into reservacion (desde, hasta, cuarto, huesped)	VALUES ('2017-02-24', '2017-02-25', 4, 2);	
+INSERT INTO reservacion (desde, hasta, cuarto, huesped)	
+	VALUES ({ts '2017-02-24 00:00:00.0'}, {ts '2017-02-25 00:00:00.0'}, 4, 2);	

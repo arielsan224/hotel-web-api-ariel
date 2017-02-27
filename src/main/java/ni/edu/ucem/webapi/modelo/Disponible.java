@@ -1,15 +1,10 @@
 package ni.edu.ucem.webapi.modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-
-import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.Range;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -17,28 +12,50 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class Disponible 
 {
-	@NotNull
-    @NotEmpty(message = "La descripción es requerida.")
-    private Date desde;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
+	private Date desde;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
+	private Date hasta;
+	private List<Cuarto> cuarto;
     
-    @NotNull
-    @NotEmpty(message = "La descripción es requerida.")
-    private Date hasta;
-    
-    @JsonIgnore
-    private Date modificado;
-    
-    public Disponible()
+    public Disponible(Date desde, Date hasta)
     {
+    	this(desde, hasta, new ArrayList<Cuarto>());
     }
     
-    public Disponible(final Date desde, final Date hasta, final Integer cuarto,
-            final Integer huesped) {
+    public Disponible(Date desde, Date hasta,List<Cuarto> cuarto) {
         this.desde=desde;
         this.hasta= hasta;
-        this.cuarto= cuarto;
-        this.huesped = huesped;
+        this.cuarto = cuarto;
+        
+        
     }
+
+	public Date getDesde() {
+		return desde;
+	}
+
+	public void setDesde(Date desde) {
+		this.desde = desde;
+	}
+
+	public Date getHasta() {
+		return hasta;
+	}
+
+	public void setHasta(Date hasta) {
+		this.hasta = hasta;
+	}
+
+	public List<Cuarto> getCuarto() {
+		return cuarto;
+	}
+
+	public void setCuarto(List<Cuarto> cuarto) {
+		this.cuarto = cuarto;
+	}
+
+	
     
         
 }

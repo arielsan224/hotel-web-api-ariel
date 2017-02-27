@@ -16,19 +16,19 @@ public class Reservacion
     
      
     @NotNull
-    @NotEmpty(message = "La descripción es requerida.")
+    @NotEmpty(message = "La fecha desde es requerida.")
     private Date desde;
     
     @NotNull
-    @NotEmpty(message = "La descripción es requerida.")
+    @NotEmpty(message = "La fecha hasta es requerida.")
     private Date hasta;
     
     @NotNull
-    @NotEmpty(message = "La descripción es requerida.")
+    @NotEmpty(message = "El numero de cuarto es requerido.")
     private Integer cuarto;
     
     @NotNull
-    @NotEmpty(message = "La descripción es requerida.")
+    @NotEmpty(message = "El huesped es requerido.")
     private Integer huesped;
     
     public Reservacion()

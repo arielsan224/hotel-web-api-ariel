@@ -17,13 +17,13 @@ CREATE TABLE huesped(
   id IDENTITY PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   email VARCHAR(50) NOT NULL UNIQUE,
-  telefono VARCHAR(20) NOT NULL,
+  telefono VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE reservacion(
   id IDENTITY PRIMARY KEY,
-  desde DATE NOT NULL,
-  hasta DATE NOT NULL,
+  desde TIMESTAMP NOT NULL,
+  hasta TIMESTAMP NOT NULL,
   cuarto INT NOT NULL,
   huesped INT NOT NULL
 );
